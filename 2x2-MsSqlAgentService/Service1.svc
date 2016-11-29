@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="_2x2_MsSqlAgentService.Service1" CodeBehind="Service1.svc.cs" %>
