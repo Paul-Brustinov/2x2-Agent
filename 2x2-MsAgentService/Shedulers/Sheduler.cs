@@ -12,8 +12,10 @@ namespace _2x2_MsAgentService.Shedulers
     [ServiceBehavior (InstanceContextMode = InstanceContextMode.Single)]
     public class Sheduler : IScheduler
     {
+
         public Sheduler()
         {
+
             Schedules = new List<ScheduleItem>();
 
             // Это типа обычная служба, но у них ничего общего or something like this...
@@ -32,8 +34,6 @@ namespace _2x2_MsAgentService.Shedulers
                 Console.WriteLine("Неправильная строка соединения, отсутствуют ключи 'Data Source' и 'Initial Catalog' !");
             }
 
-
-
             // программа создания списка задач
             var si = new ScheduleItem
             {
@@ -41,8 +41,8 @@ namespace _2x2_MsAgentService.Shedulers
                      _cnnStr),
                 Regularity = new WeeklyRegularity()
             };
-            ((WeeklyRegularity)(si.Regularity)).SetTime(13, 0);
-            ((WeeklyRegularity)(si.Regularity)).AddWeekDay(DayOfWeek.Friday);
+            ((WeeklyRegularity)(si.Regularity)).SetTime(17, 58);
+            ((WeeklyRegularity)(si.Regularity)).AddWeekDay(DayOfWeek.Thursday);
             this.AddSchedule(si);
 
             // запуск самого шедулера
@@ -71,12 +71,13 @@ namespace _2x2_MsAgentService.Shedulers
         {
             Schedules.ForEach(s =>
             {
-                new Task(() =>
+                var t = new Task(() =>
                 {
                     if (s.Regularity.IsRepeatable())
                     {
                         while (true)
                         {
+                            Console.WriteLine(s.Regularity.GetDelayToNextExecution());
                             Thread.Sleep(s.Regularity.GetDelayToNextExecution());
                             Console.WriteLine("Индексация почалася!");
                             s.Run(); // сюда вставить логгирование
@@ -85,9 +86,11 @@ namespace _2x2_MsAgentService.Shedulers
                     else
                     {
                         Thread.Sleep(s.Regularity.GetDelayToNextExecution());
-                        s.Run();  // сюда вставить логгирование
+                        s.Run(); // сюда вставить логгирование
                     }
-                }).Start();
+                });
+                t.Start();
+                
             }
         );
 

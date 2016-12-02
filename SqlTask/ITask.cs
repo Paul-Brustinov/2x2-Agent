@@ -10,7 +10,6 @@ namespace SqlTask
 {
     public interface ITask
     {
-        SqlConnection TaskDbConnection { get; set; }
         ITaskResult Run();
         string ToString();
 

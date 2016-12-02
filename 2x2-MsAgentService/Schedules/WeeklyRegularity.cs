@@ -39,7 +39,7 @@ namespace _2x2_MsAgentService.Schedules
             {
                 dateExec = day >= nowWeekDay ? now.AddDays(day - nowWeekDay) : now.AddDays(day + 7 - nowWeekDay);
                 dateExec = dateExec.Date + _time;
-                delays.Add((now - dateExec).TotalMilliseconds);
+                delays.Add((dateExec - now).TotalMilliseconds);
             });
             return (int)delays.Min();
         }
