@@ -5,8 +5,6 @@ using System.ServiceModel;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using SqlTask;
-using _2x2_MsAgentService.Schedules;
 
 namespace _2x2_MsAgentHostingConsole
 {

@@ -30,8 +30,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -41,19 +52,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbLayer\Regularity.cs" />
+    <Compile Include="DbLayer\Schedule.cs" />
+    <Compile Include="DbLayer\ScheduleRegularityPlan.cs" />
+    <Compile Include="DbLayer\ScheduleTaskParam.cs" />
+    <Compile Include="DbLayer\ServerDb.cs" />
+    <Compile Include="DbLayer\sysdiagram.cs" />
+    <Compile Include="DbLayer\Task.cs" />
+    <Compile Include="DbLayer\TaskParamName.cs" />
+    <Compile Include="DbLayer\TaskType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Schedules\IRegularity.cs" />
-    <Compile Include="Schedules\ScheduleItem.cs" />
-    <Compile Include="Schedules\WeeklyRegularity.cs" />
     <Compile Include="Shedulers\IScheduler.cs" />
     <Compile Include="Shedulers\Sheduler.cs" />
+    <Compile Include="TaskRunner.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SqlTask\2x2-Task.csproj">
-      <Project>{4a20c87e-2d0e-4983-895b-f1b394f390c4}</Project>
-      <Name>2x2-Task</Name>
-    </ProjectReference>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

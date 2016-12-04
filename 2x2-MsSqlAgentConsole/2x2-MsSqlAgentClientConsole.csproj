@@ -50,9 +50,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SqlTask\2x2-Task.csproj">
-      <Project>{4a20c87e-2d0e-4983-895b-f1b394f390c4}</Project>
-      <Name>2x2-Task</Name>
+    <ProjectReference Include="..\2x2-MsAgentService\2x2-MsAgentService.csproj">
+      <Project>{B782F0C1-80BC-4F6F-946A-667B87FDF691}</Project>
+      <Name>2x2-MsAgentService</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

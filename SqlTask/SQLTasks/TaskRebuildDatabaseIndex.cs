@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SqlTask
+namespace _2x2_Task.SqlTasks
 {
-    public class TaskRebuildDatabaseIndex : TaskSQL, ITask
+    public class TaskRebuildDatabaseIndex : TaskSql, ITask
     {
 
         public TaskRebuildDatabaseIndex(string connectionString) : base(connectionString)

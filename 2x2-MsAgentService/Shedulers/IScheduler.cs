@@ -1,5 +1,4 @@
 ﻿using System.ServiceModel;
-using _2x2_MsAgentService.Schedules;
 
 namespace _2x2_MsAgentService.Shedulers
 {
@@ -7,9 +6,9 @@ namespace _2x2_MsAgentService.Shedulers
     public interface IScheduler
     {
         [OperationContract]
-        ScheduleItem[] GetAllShedules();
+        DbLayer.Schedule[] GetAllShedules();
         [OperationContract]
-        void AddSchedule(ScheduleItem scheduleItem);
+        void AddSchedule(DbLayer.Schedule scheduleItem);
         [OperationContract]
         void RemoveScheduleItem(int ID);
     }

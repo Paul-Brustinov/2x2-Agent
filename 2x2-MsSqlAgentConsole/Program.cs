@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using SqlTask;
 using System.Text.RegularExpressions;
 
 namespace _2x2_MsSqlAgent
@@ -29,8 +28,8 @@ namespace _2x2_MsSqlAgent
             }
 
 
-            TaskRebuildDatabaseIndex t = new TaskRebuildDatabaseIndex(_cnnStr);
-            t.Run();
+            //TaskRebuildDatabaseIndex t = new TaskRebuildDatabaseIndex(_cnnStr);
+            //t.Run();
         }
     }
 }

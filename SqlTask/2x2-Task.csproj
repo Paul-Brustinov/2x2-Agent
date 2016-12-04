@@ -40,10 +40,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ITask.cs" />
-    <Compile Include="ITaskResult.cs" />
+    <Compile Include="SQLTasks\ITask.cs" />
+    <Compile Include="SQLTasks\ITaskResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SQLTasks\SQLTask.cs" />
+    <Compile Include="SQLTasks\TaskSql.cs" />
     <Compile Include="SQLTasks\TaskRebuildDatabaseIndex.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
